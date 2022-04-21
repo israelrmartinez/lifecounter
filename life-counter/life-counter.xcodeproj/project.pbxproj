@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB270A28280FA4D100BD882A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A27280FA4D100BD882A /* AppDelegate.swift */; };
+		DB270A2A280FA4D100BD882A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A29280FA4D100BD882A /* SceneDelegate.swift */; };
+		DB270A2C280FA4D100BD882A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A2B280FA4D100BD882A /* ViewController.swift */; };
+		DB270A2F280FA4D100BD882A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB270A2D280FA4D100BD882A /* Main.storyboard */; };
+		DB270A31280FA4D300BD882A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB270A30280FA4D300BD882A /* Assets.xcassets */; };
+		DB270A34280FA4D300BD882A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB270A32280FA4D300BD882A /* LaunchScreen.storyboard */; };
+		DB270A3F280FA4D300BD882A /* life_counterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A3E280FA4D300BD882A /* life_counterTests.swift */; };
+		DB270A49280FA4D300BD882A /* life_counterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A48280FA4D300BD882A /* life_counterUITests.swift */; };
+		DB270A4B280FA4D300BD882A /* life_counterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A4A280FA4D300BD882A /* life_counterUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB270A3B280FA4D300BD882A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB270A1C280FA4D100BD882A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB270A23280FA4D100BD882A;
+			remoteInfo = "life-counter";
+		};
+		DB270A45280FA4D300BD882A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB270A1C280FA4D100BD882A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB270A23280FA4D100BD882A;
+			remoteInfo = "life-counter";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB270A24280FA4D100BD882A /* life-counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "life-counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB270A27280FA4D100BD882A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB270A29280FA4D100BD882A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DB270A2B280FA4D100BD882A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB270A2E280FA4D100BD882A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB270A30280FA4D300BD882A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB270A33280FA4D300BD882A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB270A35280FA4D300BD882A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB270A3A280FA4D300BD882A /* life-counterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "life-counterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB270A3E280FA4D300BD882A /* life_counterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = life_counterTests.swift; sourceTree = "<group>"; };
+		DB270A44280FA4D300BD882A /* life-counterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "life-counterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB270A48280FA4D300BD882A /* life_counterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = life_counterUITests.swift; sourceTree = "<group>"; };
+		DB270A4A280FA4D300BD882A /* life_counterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = life_counterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB270A21280FA4D100BD882A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB270A37280FA4D300BD882A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB270A41280FA4D300BD882A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB270A1B280FA4D100BD882A = {
+			isa = PBXGroup;
+			children = (
+				DB270A26280FA4D100BD882A /* life-counter */,
+				DB270A3D280FA4D300BD882A /* life-counterTests */,
+				DB270A47280FA4D300BD882A /* life-counterUITests */,
+				DB270A25280FA4D100BD882A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB270A25280FA4D100BD882A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB270A24280FA4D100BD882A /* life-counter.app */,
+				DB270A3A280FA4D300BD882A /* life-counterTests.xctest */,
+				DB270A44280FA4D300BD882A /* life-counterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB270A26280FA4D100BD882A /* life-counter */ = {
+			isa = PBXGroup;
+			children = (
+				DB270A27280FA4D100BD882A /* AppDelegate.swift */,
+				DB270A29280FA4D100BD882A /* SceneDelegate.swift */,
+				DB270A2B280FA4D100BD882A /* ViewController.swift */,
+				DB270A2D280FA4D100BD882A /* Main.storyboard */,
+				DB270A30280FA4D300BD882A /* Assets.xcassets */,
+				DB270A32280FA4D300BD882A /* LaunchScreen.storyboard */,
+				DB270A35280FA4D300BD882A /* Info.plist */,
+			);
+			path = "life-counter";
+			sourceTree = "<group>";
+		};
+		DB270A3D280FA4D300BD882A /* life-counterTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB270A3E280FA4D300BD882A /* life_counterTests.swift */,
+			);
+			path = "life-counterTests";
+			sourceTree = "<group>";
+		};
+		DB270A47280FA4D300BD882A /* life-counterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB270A48280FA4D300BD882A /* life_counterUITests.swift */,
+				DB270A4A280FA4D300BD882A /* life_counterUITestsLaunchTests.swift */,
+			);
+			path = "life-counterUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB270A23280FA4D100BD882A /* life-counter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB270A4E280FA4D300BD882A /* Build configuration list for PBXNativeTarget "life-counter" */;
+			buildPhases = (
+				DB270A20280FA4D100BD882A /* Sources */,
+				DB270A21280FA4D100BD882A /* Frameworks */,
+				DB270A22280FA4D100BD882A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "life-counter";
+			productName = "life-counter";
+			productReference = DB270A24280FA4D100BD882A /* life-counter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB270A39280FA4D300BD882A /* life-counterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB270A51280FA4D300BD882A /* Build configuration list for PBXNativeTarget "life-counterTests" */;
+			buildPhases = (
+				DB270A36280FA4D300BD882A /* Sources */,
+				DB270A37280FA4D300BD882A /* Frameworks */,
+				DB270A38280FA4D300BD882A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB270A3C280FA4D300BD882A /* PBXTargetDependency */,
+			);
+			name = "life-counterTests";
+			productName = "life-counterTests";
+			productReference = DB270A3A280FA4D300BD882A /* life-counterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB270A43280FA4D300BD882A /* life-counterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB270A54280FA4D300BD882A /* Build configuration list for PBXNativeTarget "life-counterUITests" */;
+			buildPhases = (
+				DB270A40280FA4D300BD882A /* Sources */,
+				DB270A41280FA4D300BD882A /* Frameworks */,
+				DB270A42280FA4D300BD882A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB270A46280FA4D300BD882A /* PBXTargetDependency */,
+			);
+			name = "life-counterUITests";
+			productName = "life-counterUITests";
+			productReference = DB270A44280FA4D300BD882A /* life-counterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB270A1C280FA4D100BD882A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					DB270A23280FA4D100BD882A = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					DB270A39280FA4D300BD882A = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = DB270A23280FA4D100BD882A;
+					};
+					DB270A43280FA4D300BD882A = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = DB270A23280FA4D100BD882A;
+					};
+				};
+			};
+			buildConfigurationList = DB270A1F280FA4D100BD882A /* Build configuration list for PBXProject "life-counter" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB270A1B280FA4D100BD882A;
+			productRefGroup = DB270A25280FA4D100BD882A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB270A23280FA4D100BD882A /* life-counter */,
+				DB270A39280FA4D300BD882A /* life-counterTests */,
+				DB270A43280FA4D300BD882A /* life-counterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB270A22280FA4D100BD882A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB270A34280FA4D300BD882A /* LaunchScreen.storyboard in Resources */,
+				DB270A31280FA4D300BD882A /* Assets.xcassets in Resources */,
+				DB270A2F280FA4D100BD882A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB270A38280FA4D300BD882A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB270A42280FA4D300BD882A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB270A20280FA4D100BD882A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB270A2C280FA4D100BD882A /* ViewController.swift in Sources */,
+				DB270A28280FA4D100BD882A /* AppDelegate.swift in Sources */,
+				DB270A2A280FA4D100BD882A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB270A36280FA4D300BD882A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB270A3F280FA4D300BD882A /* life_counterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB270A40280FA4D300BD882A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB270A49280FA4D300BD882A /* life_counterUITests.swift in Sources */,
+				DB270A4B280FA4D300BD882A /* life_counterUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB270A3C280FA4D300BD882A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB270A23280FA4D100BD882A /* life-counter */;
+			targetProxy = DB270A3B280FA4D300BD882A /* PBXContainerItemProxy */;
+		};
+		DB270A46280FA4D300BD882A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB270A23280FA4D100BD882A /* life-counter */;
+			targetProxy = DB270A45280FA4D300BD882A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB270A2D280FA4D100BD882A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB270A2E280FA4D100BD882A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB270A32280FA4D300BD882A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB270A33280FA4D300BD882A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB270A4C280FA4D300BD882A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB270A4D280FA4D300BD882A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB270A4F280FA4D300BD882A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "life-counter/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.israelma.life-counter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB270A50280FA4D300BD882A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "life-counter/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.israelma.life-counter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB270A52280FA4D300BD882A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.israelma.life-counterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/life-counter.app/life-counter";
+			};
+			name = Debug;
+		};
+		DB270A53280FA4D300BD882A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.israelma.life-counterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/life-counter.app/life-counter";
+			};
+			name = Release;
+		};
+		DB270A55280FA4D300BD882A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.israelma.life-counterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "life-counter";
+			};
+			name = Debug;
+		};
+		DB270A56280FA4D300BD882A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35HWH8998P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.israelma.life-counterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "life-counter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB270A1F280FA4D100BD882A /* Build configuration list for PBXProject "life-counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB270A4C280FA4D300BD882A /* Debug */,
+				DB270A4D280FA4D300BD882A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB270A4E280FA4D300BD882A /* Build configuration list for PBXNativeTarget "life-counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB270A4F280FA4D300BD882A /* Debug */,
+				DB270A50280FA4D300BD882A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB270A51280FA4D300BD882A /* Build configuration list for PBXNativeTarget "life-counterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB270A52280FA4D300BD882A /* Debug */,
+				DB270A53280FA4D300BD882A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB270A54280FA4D300BD882A /* Build configuration list for PBXNativeTarget "life-counterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB270A55280FA4D300BD882A /* Debug */,
+				DB270A56280FA4D300BD882A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB270A1C280FA4D100BD882A /* Project object */;
+}
