@@ -35,7 +35,6 @@ class ViewController: UIViewController {
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
         loser.isHidden = true
-        
 //        minusButton2 = UIButton(type: .system)
 //        minusButton2.setTitle("-", for: .normal)
 //        minusButton2.translatesAutoresizingMaskIntoConstraints = false
@@ -74,11 +73,21 @@ class ViewController: UIViewController {
         }
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
+        detectLoser()
     }
     
     
     
-    func addScore() {
+    func detectLoser() {
+        if score1 <= 0 {
+            loser.isHidden = false
+            loser.text = "Player 1 Loses!"
+        } else if score2 <= 0 {
+            loser.isHidden = false
+            loser.text = "Player 2 Loses!"
+        } else {
+            loser.isHidden = true
+        }
     }
 //
 //    func createButton2() {
