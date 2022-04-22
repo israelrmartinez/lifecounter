@@ -59,13 +59,11 @@ class ViewController: UIViewController {
         detectLoser()
     }
     
-    
-    
     func detectLoser() {
-        if score1 <= 0 {
+        if score1 <= 0 && score1 < score2 {
             loser.isHidden = false
             loser.text = "Player 1 Loses!"
-        } else if score2 <= 0 {
+        } else if score2 <= 0 && score2 < score1 {
             loser.isHidden = false
             loser.text = "Player 2 Loses!"
         } else {
