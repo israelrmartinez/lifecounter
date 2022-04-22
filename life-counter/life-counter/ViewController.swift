@@ -30,26 +30,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        createButton()
-//        createButton2()
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
         loser.isHidden = true
-//        minusButton2 = UIButton(type: .system)
-//        minusButton2.setTitle("-", for: .normal)
-//        minusButton2.translatesAutoresizingMaskIntoConstraints = false
-//        view.addSubview(minusButton2)
-        
-    }
-    
-    
-    @IBAction func detectLoser(_ sender: UILabel) {
-        if score1 == 0 {
-            loser.text = "Player 1 Loses!"
-        } else {
-            loser.text = "Player 2 Loses!"
-        }
-        loser.isHidden = false
     }
     
     @IBAction func editPlayerScores(_ sender: UIButton) {
@@ -89,22 +72,6 @@ class ViewController: UIViewController {
             loser.isHidden = true
         }
     }
-//
-//    func createButton2() {
-//        let button = UIButton(frame: CGRect(x: 300, y: 300, width: 200, height: 50))
-////        button.center = view.center
-//        button.configuration = createConfig()
-//        view.addSubview(button)
-//    }
-//
-//    func createConfig() -> UIButton.Configuration {
-//        var config: UIButton.Configuration = .filled()
-//        config.baseBackgroundColor = .systemGreen
-//        config.title = "Player 1"
-//        config.titleAlignment = .center
-//        config.cornerStyle = .medium
-//        return config
-//    }
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
