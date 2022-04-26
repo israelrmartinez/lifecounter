@@ -11,15 +11,19 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var player1: UILabel!
     @IBOutlet weak var p1ScoreLabel: UILabel!
-    @IBOutlet weak var p1Minus5: UIButton!
-    @IBOutlet weak var p1pPlus5: UIButton!
+    @IBOutlet weak var p1InputN: UITextField!
+    @IBOutlet weak var p1Controls: UIStackView!
+    @IBOutlet weak var p1MinusN: UIButton!
+    @IBOutlet weak var p1PlusN: UIButton!
     @IBOutlet weak var p1Minus: UIButton!
     @IBOutlet weak var p1Plus: UIButton!
     
     @IBOutlet weak var player2: UILabel!
     @IBOutlet weak var p2ScoreLabel: UILabel!
-    @IBOutlet weak var p2Minus5: UIButton!
-    @IBOutlet weak var p2Plus5: UIButton!
+    @IBOutlet weak var p2InputN: UITextField!
+    @IBOutlet weak var p2Controls: UIStackView!
+    @IBOutlet weak var p2MinusN: UIButton!
+    @IBOutlet weak var p2PlusN: UIButton!
     @IBOutlet weak var p2Minus: UIButton!
     @IBOutlet weak var p2Plus: UIButton!
     
@@ -27,12 +31,62 @@ class ViewController: UIViewController {
     
     var score1 = 20
     var score2 = 20
+    var p1Num = 5
+    var p2Num = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
         loser.isHidden = true
+    }
+    
+    @IBAction func add(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            score1 += 1
+        case 2:
+            score2 += 1
+        default:
+            score2 += 1
+        }
+        updateScore()
+    }
+    
+    @IBAction func addN(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            score1 += p1Num
+        case 2:
+            score2 += p2Num
+        default:
+            score2 += p2Num
+        }
+        updateScore()
+    }
+    
+    @IBAction func subtract(_ sender: UIButton) {
+        switch sender.tag {
+        case -1:
+            score1 -= 1
+        case -2:
+            score2 -= 1
+        default:
+            score2 -= 1
+        }
+        updateScore()
+    }
+    
+    @IBAction func subtractN(_ sender: UIButton) {
+        switch sender.tag {
+        case -1:
+            score1 -= p1Num
+        case -2:
+            score2 -= p2Num
+        default:
+            score2 -= p2Num
+        }
+        updateScore()
     }
     
     @IBAction func editPlayerScores(_ sender: UIButton) {
@@ -54,12 +108,12 @@ class ViewController: UIViewController {
         default:
             score2 += 5
         }
-        p1ScoreLabel.text = "Life total: \(score1)"
-        p2ScoreLabel.text = "Life total: \(score2)"
-        detectLoser()
+        updateScore()
     }
     
-    func detectLoser() {
+    func updateScore() {
+        p1ScoreLabel.text = "Life total: \(score1)"
+        p2ScoreLabel.text = "Life total: \(score2)"
         if score1 <= 0 && score1 < score2 {
             loser.isHidden = false
             loser.text = "Player 1 Loses!"
