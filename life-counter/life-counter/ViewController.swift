@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var editNPlayers: UIStepper!
+    
     @IBOutlet weak var player1: UILabel!
     @IBOutlet weak var p1ScoreLabel: UILabel!
     @IBOutlet weak var p1InputN: UITextField!
@@ -27,17 +30,44 @@ class ViewController: UIViewController {
     @IBOutlet weak var p2Minus: UIButton!
     @IBOutlet weak var p2Plus: UIButton!
     
+    @IBOutlet weak var player3: UILabel!
+    @IBOutlet weak var p3ScoreLabel: UILabel!
+    @IBOutlet weak var p3InputN: UITextField!
+    @IBOutlet weak var p3Controls: UIStackView!
+    @IBOutlet weak var p3MinusN: UIButton!
+    @IBOutlet weak var p3PlusN: UIButton!
+    @IBOutlet weak var p3Minus: UIButton!
+    @IBOutlet weak var p3Plus: UIButton!
+    
+    @IBOutlet weak var player4: UILabel!
+    @IBOutlet weak var p4ScoreLabel: UILabel!
+    @IBOutlet weak var p4InputN: UITextField!
+    @IBOutlet weak var p4Controls: UIStackView!
+    @IBOutlet weak var p4MinusN: UIButton!
+    @IBOutlet weak var p4PlusN: UIButton!
+    @IBOutlet weak var p4Minus: UIButton!
+    @IBOutlet weak var p4Plus: UIButton!
+    
     @IBOutlet weak var loser: UILabel!
     
     var score1 = 20
     var score2 = 20
+    var score3 = 20
+    var score4 = 20
+    
     var p1Num = 5
     var p2Num = 5
+    var p3Num = 5
+    var p4Num = 5
+    var startGame = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
+        p3ScoreLabel.text = "Life total: \(score3)"
+        p4ScoreLabel.text = "Life total: \(score4)"
+        
         loser.isHidden = true
     }
     
@@ -47,8 +77,12 @@ class ViewController: UIViewController {
             score1 += 1
         case 2:
             score2 += 1
+        case 3:
+            score3 += 1
+        case 4:
+            score4 += 1
         default:
-            score2 += 1
+            score4 += 1
         }
         updateScore()
     }
@@ -59,8 +93,12 @@ class ViewController: UIViewController {
             score1 += p1Num
         case 2:
             score2 += p2Num
+        case 3:
+            score3 += p3Num
+        case 4:
+            score4 += p4Num
         default:
-            score2 += p2Num
+            score4 += p4Num
         }
         updateScore()
     }
@@ -71,8 +109,12 @@ class ViewController: UIViewController {
             score1 -= 1
         case -2:
             score2 -= 1
+        case -3:
+            score3 -= 1
+        case -4:
+            score4 -= 1
         default:
-            score2 -= 1
+            score4 -= 1
         }
         updateScore()
     }
@@ -83,34 +125,36 @@ class ViewController: UIViewController {
             score1 -= p1Num
         case -2:
             score2 -= p2Num
-        default:
-            score2 -= p2Num
-        }
-        updateScore()
-    }
-    
-    @IBAction func editPlayerScores(_ sender: UIButton) {
-        switch sender.tag {
-        case -4:
-            score1 += 5
         case -3:
-            score1 -= 5
-        case -2:
-            score1 += 1
-        case -1:
-            score1 -= 1
-        case 1:
-            score2 -= 1
-        case 2:
-            score2 += 1
-        case 3:
-            score2 -= 5
+            score3 -= p3Num
+        case -4:
+            score4 -= p4Num
         default:
-            score2 += 5
+            score4 -= p4Num
         }
         updateScore()
     }
     
+    @IBAction func updateChunk(_ sender: UITextField) {
+        
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        let allowedCharacters = "1234567890"
+        let allowedCharcterSet = CharacterSet(charactersIn: allowedCharacters)
+        let typedCharcterSet = CharacterSet(charactersIn: string)
+        return allowedCharcterSet.isSuperset(of: typedCharcterSet)
+    }
+    
+    @IBAction func getChunks(_ sender: UITextField) {
+//        var num = Int(sender.text) ?? 0
+//        switch sender.tag {
+//        case 1:
+//            p1Num = num
+//        default:
+//            p4Num = num
+//        }
+    }
     func updateScore() {
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
