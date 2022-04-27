@@ -10,10 +10,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var nPlayersLabel: UILabel!
     @IBOutlet weak var editNPlayers: UIStepper!
     
     @IBOutlet weak var player1: UILabel!
     @IBOutlet weak var p1ScoreLabel: UILabel!
+    @IBOutlet weak var p1Chunk: UILabel!
     @IBOutlet weak var p1InputN: UITextField!
     @IBOutlet weak var p1Controls: UIStackView!
     @IBOutlet weak var p1MinusN: UIButton!
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var player2: UILabel!
     @IBOutlet weak var p2ScoreLabel: UILabel!
+    @IBOutlet weak var p2Chunk: UILabel!
     @IBOutlet weak var p2InputN: UITextField!
     @IBOutlet weak var p2Controls: UIStackView!
     @IBOutlet weak var p2MinusN: UIButton!
@@ -32,6 +35,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var player3: UILabel!
     @IBOutlet weak var p3ScoreLabel: UILabel!
+    @IBOutlet weak var p3Chunk: UILabel!
     @IBOutlet weak var p3InputN: UITextField!
     @IBOutlet weak var p3Controls: UIStackView!
     @IBOutlet weak var p3MinusN: UIButton!
@@ -41,6 +45,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var player4: UILabel!
     @IBOutlet weak var p4ScoreLabel: UILabel!
+    @IBOutlet weak var p4Chunk: UILabel!
     @IBOutlet weak var p4InputN: UITextField!
     @IBOutlet weak var p4Controls: UIStackView!
     @IBOutlet weak var p4MinusN: UIButton!
@@ -49,6 +54,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var p4Plus: UIButton!
     
     @IBOutlet weak var loser: UILabel!
+    
+    var numPlayers = 4
     
     var score1 = 20
     var score2 = 20
@@ -67,6 +74,8 @@ class ViewController: UIViewController {
         p2ScoreLabel.text = "Life total: \(score2)"
         p3ScoreLabel.text = "Life total: \(score3)"
         p4ScoreLabel.text = "Life total: \(score4)"
+        
+        nPlayersLabel.text = "\(numPlayers) players"
         
         loser.isHidden = true
     }
@@ -135,9 +144,36 @@ class ViewController: UIViewController {
         updateScore()
     }
     
-    @IBAction func updateChunk(_ sender: UITextField) {
-        
+    @IBAction func editPlayers(_ sender: UIStepper) {
+        numPlayers = Int(sender.value) ?? 0
+        updatePlayers()
     }
+    
+    @IBAction func updateChunk(_ sender: UITextField) {
+        let numInput = sender.text ?? ""
+        let chunk = Int(numInput) ?? 0
+        switch sender.tag {
+        case 1:
+            p1Num = chunk
+        case 2:
+            p2Num = chunk
+        case 3:
+            p3Num = chunk
+        case 4:
+            p4Num = chunk
+        default:
+            p1Num = chunk
+        }
+        updateChunkText()
+    }
+    
+    func updateChunkText() {
+        p1Chunk.text = "Add/remove \(p1Num):"
+        p2Chunk.text = "Add/remove \(p2Num):"
+        p3Chunk.text = "Add/remove \(p3Num):"
+        p4Chunk.text = "Add/remove \(p4Num):"
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         let allowedCharacters = "1234567890"
@@ -155,6 +191,11 @@ class ViewController: UIViewController {
 //            p4Num = num
 //        }
     }
+    
+    func updatePlayers() {
+        nPlayersLabel.text = "\(numPlayers) players"
+    }
+    
     func updateScore() {
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
