@@ -169,9 +169,20 @@ class ViewController: UIViewController {
     
     func updateChunkText() {
         p1Chunk.text = "Add/remove \(p1Num):"
+        p1MinusN.setTitle("-\(p1Num)", for: .normal)
+        p1PlusN.setTitle("+\(p1Num)", for: .normal)
+        
         p2Chunk.text = "Add/remove \(p2Num):"
+        p2MinusN.setTitle("-\(p2Num)", for: .normal)
+        p2PlusN.setTitle("+\(p2Num)", for: .normal)
+        
         p3Chunk.text = "Add/remove \(p3Num):"
+        p3MinusN.setTitle("-\(p3Num)", for: .normal)
+        p3PlusN.setTitle("+\(p3Num)", for: .normal)
+        
         p4Chunk.text = "Add/remove \(p4Num):"
+        p4MinusN.setTitle("-\(p4Num)", for: .normal)
+        p4PlusN.setTitle("+\(p4Num)", for: .normal)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

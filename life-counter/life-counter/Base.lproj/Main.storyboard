@@ -93,9 +93,9 @@
                                                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSf-aP-jfB">
                                                                                 <rect key="frame" x="153" y="0.0" width="147.33333333333337" height="34"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <textInputTraits key="textInputTraits" textContentType="postal-code"/>
+                                                                                <textInputTraits key="textInputTraits"/>
                                                                                 <connections>
-                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="kkm-nJ-VaJ"/>
+                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingChanged" id="VUi-nk-xum"/>
                                                                                 </connections>
                                                                             </textField>
                                                                         </subviews>
@@ -173,7 +173,7 @@
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                 <connections>
-                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="9T1-PJ-fGc"/>
+                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingChanged" id="wZ8-6D-FEw"/>
                                                                                 </connections>
                                                                             </textField>
                                                                         </subviews>
@@ -257,7 +257,7 @@
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                 <connections>
-                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="W69-j5-nH0"/>
+                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingChanged" id="Y8z-u7-pis"/>
                                                                                 </connections>
                                                                             </textField>
                                                                         </subviews>
@@ -335,7 +335,7 @@
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                 <connections>
-                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="npS-mn-fP5"/>
+                                                                                    <action selector="updateChunk:" destination="BYZ-38-t0r" eventType="editingChanged" id="hFf-E9-Yfy"/>
                                                                                 </connections>
                                                                             </textField>
                                                                         </subviews>
