@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var setPlayers: UIStackView!
     @IBOutlet weak var nPlayersLabel: UILabel!
     @IBOutlet weak var editNPlayers: UIStepper!
     
@@ -145,7 +146,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func editPlayers(_ sender: UIStepper) {
-        numPlayers = Int(sender.value) ?? 0
+        numPlayers = Int(sender.value)
         updatePlayers()
     }
     
@@ -208,6 +209,9 @@ class ViewController: UIViewController {
     }
     
     func updateScore() {
+        if score1 != 20 || score2 != 20 || score3 != 20 || score4 != 20 {
+            setPlayers.isHidden = true
+        }
         p1ScoreLabel.text = "Life total: \(score1)"
         p2ScoreLabel.text = "Life total: \(score2)"
         if score1 <= 0 && score1 < score2 {

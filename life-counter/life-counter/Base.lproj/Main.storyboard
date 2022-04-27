@@ -397,6 +397,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="Qgm-Mr-aLX" secondAttribute="height" id="8xz-Hy-ZbC"/>
                                     <constraint firstItem="Qgm-Mr-aLX" firstAttribute="width" secondItem="dYy-hi-WxQ" secondAttribute="width" id="DuQ-YX-BE1"/>
+                                    <constraint firstItem="Qgm-Mr-aLX" firstAttribute="centerX" secondItem="dYy-hi-WxQ" secondAttribute="centerX" id="IWn-Mn-Ufz"/>
                                     <constraint firstItem="Qgm-Mr-aLX" firstAttribute="leading" secondItem="dYy-hi-WxQ" secondAttribute="leading" id="SvZ-5Y-LCI"/>
                                     <constraint firstItem="Qgm-Mr-aLX" firstAttribute="top" secondItem="dYy-hi-WxQ" secondAttribute="top" id="bsV-RQ-GYN"/>
                                     <constraint firstAttribute="bottom" secondItem="Qgm-Mr-aLX" secondAttribute="bottom" priority="250" id="ggt-4n-dxJ"/>
@@ -454,6 +455,7 @@
                         <outlet property="player3" destination="T0K-QJ-1Ev" id="n8R-P3-XdF"/>
                         <outlet property="player4" destination="uOt-8L-yRF" id="jvO-7P-6mf"/>
                         <outlet property="scrollView" destination="dYy-hi-WxQ" id="KWl-Zh-TJZ"/>
+                        <outlet property="setPlayers" destination="gkQ-qN-f3D" id="zMR-Dt-l15"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
