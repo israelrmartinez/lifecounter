@@ -16,4 +16,7 @@ class HistoryViewController: UIViewController {
         //historyLabel.text = history
         
     }
+    @IBAction func dismissTouchUpInside(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }

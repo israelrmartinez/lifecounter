@@ -27,8 +27,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var inputChunk: UITextField!
     
     
-    
-    
     var player: Player!
     weak var delegate: TableViewCellProtocol?
     
@@ -79,5 +77,11 @@ class TableViewCell: UITableViewCell {
         player.add()
         scoreLabel.text = "Life total: \(player.points ?? 0)"
         delegate?.minusButtonTouchUpInside(player.points)
+    }
+    
+    func checkScore() {
+        if player.points <= 0 {
+            
+        }
     }
 }

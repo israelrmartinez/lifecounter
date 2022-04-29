@@ -13,7 +13,6 @@ import SwiftUI
 }
 
 class ViewController: UIViewController {
-    @StateObject var gameStarted = GameStatus()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loser: UILabel!
@@ -36,15 +35,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        //tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
-//        setupTableViews()
         addRemovePlayers.text = "\(numPlayers) Players:"
+        print("hello")
         loser.isHidden = true
     }
     
-    @IBAction func historyButtonTouchUpInside(_ sender: Any) {
-        performSegue(withIdentifier: "ShowHistory", sender: self)
-    }
+//    @IBAction func historyButtonTouchUpInside(_ sender: Any) {
+//        performSegue(withIdentifier: "ShowHistory", sender: self)
+//    }
     
     @IBAction func editPlayers(_ sender: UIStepper) {
         numPlayers = Int(sender.value)
@@ -64,6 +62,19 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        switch segue.identifier
+//        {
+//        case Optional("fromFirstToSecond"):
+//            print("Going from first to second")
+//            let secondVC = segue.destination as! SecondViewController
+//            secondVC.message = "Howdy from First"
+//            break;
+//        default:
+//            print("I have no idea what segue you're using")
+//        }
+//    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
