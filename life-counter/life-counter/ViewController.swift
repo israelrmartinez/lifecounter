@@ -6,184 +6,63 @@
 //
 
 import UIKit
+import SwiftUI
+
+@MainActor class GameStatus : ObservableObject {
+    @Published var gameStarted: Bool = false
+}
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var setPlayers: UIStackView!
-    @IBOutlet weak var nPlayersLabel: UILabel!
-    @IBOutlet weak var editNPlayers: UIStepper!
+    @StateObject var gameStarted = GameStatus()
     
-    @IBOutlet weak var player1: UILabel!
-    @IBOutlet weak var p1ScoreLabel: UILabel!
-    @IBOutlet weak var p1Chunk: UILabel!
-    @IBOutlet weak var p1InputN: UITextField!
-    @IBOutlet weak var p1Controls: UIStackView!
-    @IBOutlet weak var p1MinusN: UIButton!
-    @IBOutlet weak var p1PlusN: UIButton!
-    @IBOutlet weak var p1Minus: UIButton!
-    @IBOutlet weak var p1Plus: UIButton!
-    
-    @IBOutlet weak var player2: UILabel!
-    @IBOutlet weak var p2ScoreLabel: UILabel!
-    @IBOutlet weak var p2Chunk: UILabel!
-    @IBOutlet weak var p2InputN: UITextField!
-    @IBOutlet weak var p2Controls: UIStackView!
-    @IBOutlet weak var p2MinusN: UIButton!
-    @IBOutlet weak var p2PlusN: UIButton!
-    @IBOutlet weak var p2Minus: UIButton!
-    @IBOutlet weak var p2Plus: UIButton!
-    
-    @IBOutlet weak var player3: UILabel!
-    @IBOutlet weak var p3ScoreLabel: UILabel!
-    @IBOutlet weak var p3Chunk: UILabel!
-    @IBOutlet weak var p3InputN: UITextField!
-    @IBOutlet weak var p3Controls: UIStackView!
-    @IBOutlet weak var p3MinusN: UIButton!
-    @IBOutlet weak var p3PlusN: UIButton!
-    @IBOutlet weak var p3Minus: UIButton!
-    @IBOutlet weak var p3Plus: UIButton!
-    
-    @IBOutlet weak var player4: UILabel!
-    @IBOutlet weak var p4ScoreLabel: UILabel!
-    @IBOutlet weak var p4Chunk: UILabel!
-    @IBOutlet weak var p4InputN: UITextField!
-    @IBOutlet weak var p4Controls: UIStackView!
-    @IBOutlet weak var p4MinusN: UIButton!
-    @IBOutlet weak var p4PlusN: UIButton!
-    @IBOutlet weak var p4Minus: UIButton!
-    @IBOutlet weak var p4Plus: UIButton!
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loser: UILabel!
+    
+    @IBOutlet weak var addRemovePlayers: UILabel!
+    @IBOutlet weak var setPlayers: UIStepper!
     
     var numPlayers = 4
     
-    var score1 = 20
-    var score2 = 20
-    var score3 = 20
-    var score4 = 20
     
-    var p1Num = 5
-    var p2Num = 5
-    var p3Num = 5
-    var p4Num = 5
-    var startGame = false
+    var allPlayers: [Player] = [
+        Player(score: 20),
+        Player(score: 20),
+        Player(score: 20),
+        Player(score: 20)
+    ]
+    var history: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        p1ScoreLabel.text = "Life total: \(score1)"
-        p2ScoreLabel.text = "Life total: \(score2)"
-        p3ScoreLabel.text = "Life total: \(score3)"
-        p4ScoreLabel.text = "Life total: \(score4)"
-        
-        nPlayersLabel.text = "\(numPlayers) players"
-        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        //tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+//        setupTableViews()
+        addRemovePlayers.text = "\(numPlayers) Players:"
         loser.isHidden = true
     }
     
-    @IBAction func add(_ sender: UIButton) {
-        switch sender.tag {
-        case 1:
-            score1 += 1
-        case 2:
-            score2 += 1
-        case 3:
-            score3 += 1
-        case 4:
-            score4 += 1
-        default:
-            score4 += 1
-        }
-        updateScore()
-    }
-    
-    @IBAction func addN(_ sender: UIButton) {
-        switch sender.tag {
-        case 1:
-            score1 += p1Num
-        case 2:
-            score2 += p2Num
-        case 3:
-            score3 += p3Num
-        case 4:
-            score4 += p4Num
-        default:
-            score4 += p4Num
-        }
-        updateScore()
-    }
-    
-    @IBAction func subtract(_ sender: UIButton) {
-        switch sender.tag {
-        case -1:
-            score1 -= 1
-        case -2:
-            score2 -= 1
-        case -3:
-            score3 -= 1
-        case -4:
-            score4 -= 1
-        default:
-            score4 -= 1
-        }
-        updateScore()
-    }
-    
-    @IBAction func subtractN(_ sender: UIButton) {
-        switch sender.tag {
-        case -1:
-            score1 -= p1Num
-        case -2:
-            score2 -= p2Num
-        case -3:
-            score3 -= p3Num
-        case -4:
-            score4 -= p4Num
-        default:
-            score4 -= p4Num
-        }
-        updateScore()
+    @IBAction func historyButtonTouchUpInside(_ sender: Any) {
+        performSegue(withIdentifier: "ShowHistory", sender: self)
     }
     
     @IBAction func editPlayers(_ sender: UIStepper) {
         numPlayers = Int(sender.value)
-        updatePlayers()
+        addRemovePlayers.text = "\(numPlayers) Players:"
     }
     
-    @IBAction func updateChunk(_ sender: UITextField) {
-        let numInput = sender.text ?? ""
-        let chunk = Int(numInput) ?? 0
-        switch sender.tag {
-        case 1:
-            p1Num = chunk
-        case 2:
-            p2Num = chunk
-        case 3:
-            p3Num = chunk
-        case 4:
-            p4Num = chunk
-        default:
-            p1Num = chunk
+    
+    @IBAction func removeStepper(_ sender: Any) {
+        setPlayers.isHidden = true
+        addRemovePlayers.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowHistory" {
+            if let hisVC = segue.destination as? HistoryViewController {
+                hisVC.history = "\(history)"
+            }
         }
-        updateChunkText()
-    }
-    
-    func updateChunkText() {
-        p1Chunk.text = "Add/remove \(p1Num):"
-        p1MinusN.setTitle("-\(p1Num)", for: .normal)
-        p1PlusN.setTitle("+\(p1Num)", for: .normal)
-        
-        p2Chunk.text = "Add/remove \(p2Num):"
-        p2MinusN.setTitle("-\(p2Num)", for: .normal)
-        p2PlusN.setTitle("+\(p2Num)", for: .normal)
-        
-        p3Chunk.text = "Add/remove \(p3Num):"
-        p3MinusN.setTitle("-\(p3Num)", for: .normal)
-        p3PlusN.setTitle("+\(p3Num)", for: .normal)
-        
-        p4Chunk.text = "Add/remove \(p4Num):"
-        p4MinusN.setTitle("-\(p4Num)", for: .normal)
-        p4PlusN.setTitle("+\(p4Num)", for: .normal)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -193,69 +72,57 @@ class ViewController: UIViewController {
         let typedCharcterSet = CharacterSet(charactersIn: string)
         return allowedCharcterSet.isSuperset(of: typedCharcterSet)
     }
-    
-    @IBAction func getChunks(_ sender: UITextField) {
-//        var num = Int(sender.text) ?? 0
-//        switch sender.tag {
-//        case 1:
-//            p1Num = num
-//        default:
-//            p4Num = num
-//        }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
     
-    func updatePlayers() {
-        nPlayersLabel.text = "\(numPlayers) players"
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0;//Choose your custom row height
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    func updateScore() {
-        if score1 != 20 || score2 != 20 || score3 != 20 || score4 != 20 {
-            setPlayers.isHidden = true
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return allPlayers.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell {
+            cell.player = allPlayers[indexPath.section]
+            cell.configureCell()
+            cell.delegate = self
+            return cell
         }
-        p1ScoreLabel.text = "Life total: \(score1)"
-        p2ScoreLabel.text = "Life total: \(score2)"
-        if score1 <= 0 && score1 < score2 {
-            loser.isHidden = false
-            loser.text = "Player 1 Loses!"
-        } else if score2 <= 0 && score2 < score1 {
-            loser.isHidden = false
-            loser.text = "Player 2 Loses!"
-        } else {
-            loser.isHidden = true
-        }
+        return UITableViewCell()
+    }
+}
+
+
+extension ViewController: TableViewCellProtocol {
+    func minusChunkButtonTouchUpInside(_ score: Int) {
+        history.append(score)
+        print(history)
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        let topSpaceConstraint = NSLayoutConstraint(
-//            item: minusButton2!,
-//            attribute: .top,
-//            relatedBy: .equal,
-//            toItem: minusButton2,
-//            attribute: .bottom,
-//            multiplier: 1.0,
-//            constant: 22.0)
-//
-//        let centerXConstraint = NSLayoutConstraint(
-//            item: minusButton2!,
-//            attribute: .centerX,
-//            relatedBy: .equal,
-//            toItem: minusButton1,
-//            attribute: .centerX,
-//            multiplier: 1.0,
-//            constant: 0)
-//
-//        minusButton2.addConstraint(topSpaceConstraint)
-//        minusButton2.addConstraint(centerXConstraint)
-//    }
+    func plusChunkButtonTouchUpInside(_ score: Int) {
+        history.append(score)
+        print(history)
+    }
     
-//    @IBAction func minusButtonDidTouchUpInside(_ sender: Any) {
-//        score -= 1
-//        scoreLabel1.text = "\(score)"
-//    }
-//
-//    @IBAction func plusButtonDidTouchUpInside(_ sender: Any) {
-//        score += 1
-//        scoreLabel1.text = "\(score)"
-//    }}
+    func minusButtonTouchUpInside(_ score: Int) {
+        history.append(score)
+        print(history)
+    }
+    
+    func plusButtonTouchUpInside(_ score: Int) {
+        history.append(score)
+    }
 }

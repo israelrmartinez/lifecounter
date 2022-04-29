@@ -16,6 +16,9 @@
 		DB270A3F280FA4D300BD882A /* life_counterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A3E280FA4D300BD882A /* life_counterTests.swift */; };
 		DB270A49280FA4D300BD882A /* life_counterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A48280FA4D300BD882A /* life_counterUITests.swift */; };
 		DB270A4B280FA4D300BD882A /* life_counterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB270A4A280FA4D300BD882A /* life_counterUITestsLaunchTests.swift */; };
+		DB3310AE28190E0900824BFD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3310AD28190E0900824BFD /* TableViewCell.swift */; };
+		DB3310B028190F0F00824BFD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3310AF28190F0F00824BFD /* Player.swift */; };
+		DB3310B2281A580F00824BFD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3310B1281A580F00824BFD /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		DB270A44280FA4D300BD882A /* life-counterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "life-counterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB270A48280FA4D300BD882A /* life_counterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = life_counterUITests.swift; sourceTree = "<group>"; };
 		DB270A4A280FA4D300BD882A /* life_counterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = life_counterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB3310AD28190E0900824BFD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		DB3310AF28190F0F00824BFD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		DB3310B1281A580F00824BFD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				DB270A27280FA4D100BD882A /* AppDelegate.swift */,
 				DB270A29280FA4D100BD882A /* SceneDelegate.swift */,
 				DB270A2B280FA4D100BD882A /* ViewController.swift */,
+				DB3310B1281A580F00824BFD /* HistoryViewController.swift */,
+				DB3310AD28190E0900824BFD /* TableViewCell.swift */,
+				DB3310AF28190F0F00824BFD /* Player.swift */,
 				DB270A2D280FA4D100BD882A /* Main.storyboard */,
 				DB270A30280FA4D300BD882A /* Assets.xcassets */,
 				DB270A32280FA4D300BD882A /* LaunchScreen.storyboard */,
@@ -259,7 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB270A2C280FA4D100BD882A /* ViewController.swift in Sources */,
+				DB3310AE28190E0900824BFD /* TableViewCell.swift in Sources */,
 				DB270A28280FA4D100BD882A /* AppDelegate.swift in Sources */,
+				DB3310B2281A580F00824BFD /* HistoryViewController.swift in Sources */,
+				DB3310B028190F0F00824BFD /* Player.swift in Sources */,
 				DB270A2A280FA4D100BD882A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
