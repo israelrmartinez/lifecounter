@@ -17,7 +17,7 @@ protocol TableViewCellProtocol: AnyObject {
 
 class TableViewCell: UITableViewCell {
 //    var score = 20
-    
+//    @Binding var loserPlayer: String = ""
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var minusChunkButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -25,7 +25,6 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var plusChunkButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var inputChunk: UITextField!
-    
     
     var player: Player!
     weak var delegate: TableViewCellProtocol?

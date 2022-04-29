@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var addRemovePlayers: UILabel!
     @IBOutlet weak var setPlayers: UIStepper!
+    @State var loserPlayer: String = ""
     
     var numPlayers = 4
     
