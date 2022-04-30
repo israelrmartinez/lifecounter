@@ -10,10 +10,14 @@ import Foundation
 class Player {
     var points: Int!
     var chunk: Int!
+    var name: String!
+    var isLoser: Bool!
     
     init(score points: Int) {
         self.points = points
         self.chunk = 5
+        self.name = ""
+        self.isLoser = false
     }
     
     func subtract() {

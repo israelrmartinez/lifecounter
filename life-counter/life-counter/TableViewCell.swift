@@ -13,6 +13,7 @@ protocol TableViewCellProtocol: AnyObject {
     func minusChunkButtonTouchUpInside(_ score: Int)
     func plusChunkButtonTouchUpInside(_ score: Int)
     func plusButtonTouchUpInside(_ score: Int)
+    func detectLoser(_ loserPLayer: Player)
 }
 
 class TableViewCell: UITableViewCell {
@@ -50,12 +51,14 @@ class TableViewCell: UITableViewCell {
         player.subtract()
         scoreLabel.text = "Life total: \(player.points ?? 0)"
         delegate?.minusButtonTouchUpInside(player.points)
+        delegate?.detectLoser(player)
     }
     
     @IBAction func minusChunkButtonTouchUpInside(_ sender: Any) {
         player.subtractChunk()
         scoreLabel.text = "Life total: \(player.points ?? 0)"
         delegate?.minusChunkButtonTouchUpInside(player.points)
+        delegate?.detectLoser(player)
     }
     
     @IBAction func chunkInputEditingChanged(_ sender: UITextField) {
@@ -70,17 +73,22 @@ class TableViewCell: UITableViewCell {
         player.addChunk()
         scoreLabel.text = "Life total: \(player.points ?? 0)"
         delegate?.minusButtonTouchUpInside(player.points)
+        delegate?.detectLoser(player)
     }
     
     @IBAction func plusButtonTouchUpInside(_ sender: Any) {
         player.add()
         scoreLabel.text = "Life total: \(player.points ?? 0)"
         delegate?.minusButtonTouchUpInside(player.points)
+        delegate?.detectLoser(player)
     }
     
-    func checkScore() {
-        if player.points <= 0 {
-            
-        }
-    }
+//    func detectLoser() -> Player {
+//        if player.points <= 0 {
+//            let loserPlayer: Player = player
+//            loserPlayer.isLoser = true
+//            return loserPlayer
+//        }
+//        return player
+//    }
 }

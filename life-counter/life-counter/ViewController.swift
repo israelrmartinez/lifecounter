@@ -137,4 +137,19 @@ extension ViewController: TableViewCellProtocol {
     func plusButtonTouchUpInside(_ score: Int) {
         history.append(score)
     }
+    
+    func detectLoser(_ loserPlayer: Player) {
+        if loserPlayer.points <= 0 {
+            for (index, playerN) in allPlayers.enumerated() {
+                if playerN.points == loserPlayer.points {
+                    loser.text = "Player \(index + 1) loses!"
+                    loser.isHidden = false
+                }
+            }
+//            let loserPlayer: Player = player
+        } else {
+            loserPlayer.isLoser = true
+            loser.isHidden = true
+        }
+    }
 }
